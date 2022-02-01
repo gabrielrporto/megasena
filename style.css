@@ -1,0 +1,68 @@
+:root{
+    --clr-green100: hsl(118, 84%, 34%);
+    --clr-green200: hsl(120, 100%, 25%);
+    --clr-green300: hsl(118, 84%, 24%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(var(--clr-green100), var(--clr-green300));
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--clr-green200);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 7px var(--clr-green200);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.container:hover{
+    box-shadow: 0 11px var(--clr-green200);
+    transform: translateY(-2px);
+}
+h1,.numerosSorteados{
+    margin-bottom: 10px;
+}
+.numerosSorteados{
+    display: flex;
+    justify-content: space-evenly;
+}
+p{
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    width: 1.5em;
+    aspect-ratio: 1;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    padding: 10px 40px;
+    cursor: pointer;
+    background-color: var(--clr-green100);
+    transition: background-color 0.3s;
+}
+button:hover,button:focus{
+    background-color: var(--clr-green300);
+}
+@supports selector(:focus-visible){
+    button:focus{
+        background-color: var(--clr-green100);
+    }
+    button:hover,button:focus-visible{
+        background-color: var(--clr-green300);
+    }
+}
